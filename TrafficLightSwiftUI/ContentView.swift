@@ -16,27 +16,11 @@ struct ContentView: View {
             Color.black
                 .ignoresSafeArea()
             VStack {
-                Circle()
-                    .foregroundColor(.red)
-                    .frame(width: 130, height: 130)
-                    .overlay(Circle().stroke(Color.white, lineWidth: 4))
-                Circle()
-                    .foregroundColor(.yellow)
-                    .frame(width: 130, height: 130)
-                    .overlay(Circle().stroke(Color.white, lineWidth: 4))
-                Circle()
-                    .foregroundColor(.green)
-                    .frame(width: 130, height: 130)
-                    .overlay(Circle().stroke(Color.white, lineWidth: 4))
+                CircleView(color: .red, opacity: 1)
+                CircleView(color: .yellow, opacity: 0.5)
+                CircleView(color: .green, opacity: 0.5)
                 Spacer()
-                Button(action: { tapCount += 1 }) {
-                    Text("START: \(tapCount)")
-                        .font(.title)
-                        .foregroundColor(.white)
-                        .frame(width: 180, height: 50)
-                        .background(Color.blue)
-                        .cornerRadius(15)
-                }
+                ButtonView(title: "START")
             }
             .padding()
         }
