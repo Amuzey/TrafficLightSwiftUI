@@ -10,21 +10,25 @@ import SwiftUI
 struct ButtonView: View {
     
     var title: String
+    var completion: () -> Void
     
     var body: some View {
-        Button(action: { }) {
+        Button(action: { completion() }) {
             Text(title)
                 .font(.title)
                 .foregroundColor(.white)
                 .frame(width: 180, height: 50)
                 .background(Color.blue)
                 .cornerRadius(15)
+            
         }
     }
 }
 
 struct ButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        ButtonView(title: "button")
+        ButtonView(title: "button") {
+            print(5)
+        }
     }
 }
